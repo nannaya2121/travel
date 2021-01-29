@@ -13,8 +13,8 @@
 		<form action="/user/registProcess" method="post">
 				
 				<span>이메일</span>
-				<input type="email" id="email" name="email" placeholder="이메일을 입력하세요">
-				<button type="button" id="idDuplicate">이메일 중복체크</button>
+				<input type="text" id="email" name="email" placeholder="이메일을 입력하세요">
+				<button type="button" id="idDuplicate">아이디 중복체크</button>
 				<input type="hidden" id="idChecker"><br>
 				
 				

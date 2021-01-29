@@ -94,7 +94,7 @@ public class UserController {
 		//login 값이 들어있고 boolean passMatch값이 true면 로그인 성공
 		if(login != null && passMatch) {
 			session.setAttribute("user", login);
-			return "redirect:/user/login";
+			return "redirect:/";
 		}else {
 			session.setAttribute("user", null);
 			rttr.addFlashAttribute("warn", false);
@@ -117,6 +117,13 @@ public class UserController {
 		}
 		
 		return result;
+	}
+	
+	//로그아웃
+	@GetMapping(value = "/logOut")
+	public String logOut(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
 	}
 	
 }

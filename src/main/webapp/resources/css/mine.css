@@ -1,0 +1,19 @@
+.backImage{
+	background-image: url("/resources/images/back-canal.jpg");
+}
+
+.loginWhoreBackgroundColor{
+	border: 3px solid black;
+	border-radius: 1em;
+	margin-top: 5%; 
+	background-color: #FCF8D3;
+	box-shadow: 3px 3px 3px 3px #c7c7c7;
+	background-image: url("/resources/images/fire.jpg"); 
+	background-size: 100%;
+}
+
+.loginBtn{
+	width: 100%;
+	margin: 1%;
+}
+
