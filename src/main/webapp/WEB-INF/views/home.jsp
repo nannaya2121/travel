@@ -13,7 +13,7 @@
 <body>
 	
 	
-		<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top d-flex">
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark d-flex">
 		
 				<a class="navbar-brand" href="/">Travel</a>
 			  
@@ -45,7 +45,15 @@
 		
 		</nav>
 		
-	
+		<div style="border: 1px solid red; height: 35%;">
+		<h2>추천여행지</h2>
+		<div>
+		<div style="border: 1px solid blue; width: 20%; height: 75%; ">사진나오는 곳</div>
+		<div>traveler : </div>
+		<div style="border: 1px solid blue; width: 20%; height: 75%; ">사진나오는 곳</div>
+		<div>traveler : </div>
+		</div>
+		</div>
 	
 	
 	
