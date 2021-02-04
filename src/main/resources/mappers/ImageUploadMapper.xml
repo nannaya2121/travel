@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.travel.mappers.image">
+
+	<insert id="imageRegist" parameterType="com.travel.domain.ImageDTO">
+		
+			insert into 
+						content(title, pic_content, text_content)  
+					values 
+						(#{title}, #{pic_content}, #{text_content})
+		
+	</insert>
+
+</mapper>

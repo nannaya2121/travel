@@ -9,6 +9,7 @@
 	  href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
 	  integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
 	  crossorigin="anonymous">
+<link rel="stylesheet" href="/resources/css/mine.css">
 </head>
 <body>
 	
@@ -20,39 +21,113 @@
 			<ul class="navbar-nav ml-auto">
 			
 				<c:if test="${user == null}">
+				
+					<li>
+						<a class="nav-link text-light" href="/picUpload">사진등록하기</a>
+					</li>
 			
 					<li class="nav-item">
-						<a class="nav-link" href="/user/regist">회원가입</a>
+						<a class="nav-link text-light" href="/user/regist">회원가입</a>
 					</li>
 					
 					<li class="nav-item">
-						<a class="nav-link" href="/user/login">로그인</a>
+						<a class="nav-link text-light" href="/user/login">로그인</a>
 					</li>
 				
 				</c:if>
 				
 				<c:if test="${user != null}">
+				
+					<li>
+						<a class="nav-link text-light" href="/picUpload">사진등록하기</a>
+					</li>
+				
 					<li class="p-2 ml-auto">
-							<span class="" style="color: white">${user.email} 님 환영합니다.</span>
+							<span style="color: white">${user.email} 님 환영합니다.</span>
 					</li>
 					
 					<li class="nav-item">
 						<a class="nav-link btn btn-outline-info" href="/user/logOut">로그아웃</a>
 					</li>
+					
 				</c:if>
 				
 			</ul>
 		
 		</nav>
 		
-		<div style="border: 1px solid red; height: 35%;">
-		<h2>추천여행지</h2>
-		<div>
-		<div style="border: 1px solid blue; width: 20%; height: 75%; ">사진나오는 곳</div>
-		<div>traveler : </div>
-		<div style="border: 1px solid blue; width: 20%; height: 75%; ">사진나오는 곳</div>
-		<div>traveler : </div>
+		
+		
+		
+		<div class="chunk">
+		
+			<h2 class="h2font">추천 여행지</h2>
+				
+			<div class="text-center divTotalBlock">
+			
+				<div class="picPlusID">
+					<div class="onlyPic">추천 사진나오는 곳1</div>
+					<div class="onlyUser">traveler : </div>
+				</div>
+				
+				<div class="picPlusID">
+					<div class="onlyPic">추천 사진나오는 곳2</div>
+					<div class="onlyUser">traveler : </div>
+				</div>
+				
+				<div class="picPlusID">
+					<div class="onlyPic">추천 사진나오는 곳3</div>
+					<div class="onlyUser">traveler : </div>
+				</div>
+				
+				<div class="picPlusID">
+					<div class="onlyPic">추천 사진나오는 곳4</div>
+					<div class="onlyUser">traveler : </div>
+				</div>
+				
+				<div class="picPlusID">
+					<div class="onlyPic">추천 사진나오는 곳5</div>
+					<div class="onlyUser">traveler : </div>
+				</div>
+			
+			</div>
+			
 		</div>
+		
+		
+		<div class="chunk">
+		
+			<h2 class="h2font">실시간 여행지</h2>
+				
+			<div class="text-center divTotalBlock">
+			
+				<div class="picPlusID">
+					<div class="onlyPic">실시간 사진나오는 곳1</div>
+					<div class="onlyUser">traveler : </div>
+				</div>
+				
+				<div class="picPlusID">
+					<div class="onlyPic">실시간 사진나오는 곳2</div>
+					<div class="onlyUser">traveler : </div>
+				</div>
+				
+				<div class="picPlusID">
+					<div class="onlyPic">실시간 사진나오는 곳3</div>
+					<div class="onlyUser">traveler : </div>
+				</div>
+				
+				<div class="picPlusID">
+					<div class="onlyPic">실시간 사진나오는 곳4</div>
+					<div class="onlyUser">traveler : </div>
+				</div>
+				
+				<div class="picPlusID">
+					<div class="onlyPic">실시간 사진나오는 곳5</div>
+					<div class="onlyUser">traveler : </div>
+				</div>
+			
+			</div>
+			
 		</div>
 	
 	

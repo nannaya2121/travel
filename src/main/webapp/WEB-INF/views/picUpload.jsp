@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
-<title>로그인</title>
+<title>Picture Upload</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" 
 	  href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
@@ -11,10 +11,9 @@
 	  crossorigin="anonymous">
 <link rel="stylesheet" href="/resources/css/mine.css">
 </head>
-<body class="backImage">
-
-
-		<%-- 상단 네비바 --%>
+<body>
+	
+	
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark d-flex">
 		
 				<a class="navbar-brand" href="/">Travel</a>
@@ -47,48 +46,46 @@
 		
 		</nav>
 		
-
-
 		
+		<form action="picUploadProcess" method="post">
 		
-
-		<%-- 로그인 폼 --%>
-		<div class="container col-sm-2 loginWhoreBackgroundColor">
-			<p>&emsp;</p>
-			<h2 class="text-center">Travel Login</h2>
-			<p class="topLoginBottomLine">&emsp;</p>
+			<label>여행장소</label>
+			<input class="col-5" type="text" name="title" placeholder="여행장소를 입력해주세요">
 			
-			<form action="/user/loginProcess" method="post">
-				
-				<div class="form-group">
-					<label for="email"><b>아이디</b></label>
-					<input type="text" class="form-control" name="email" placeholder="아이디를 입력하세요">
-				</div>
-				
-				<div class="form-group">
-					<label for="password"><b>비밀번호</b></label>
-					<input type="password" class="form-control" name="password" placeholder="비밀번호를 입력하세요" >
-				</div>
-				
-				<div class="form-group form-check">
-					<label class="form-check-label">
-						<input class="form-check-input" type="checkbox" name="remember"> 아이디 기억하기
-					</label>
-				</div>
-				
-				<c:if test="${warn == false}">
-					<p style="color: red;">아이디나 비밀번호를 다시 확인해주세요 </p>
-				</c:if>
-				
-				<button type="submit" class="btn btn-info loginBtn">로그인</button>
-				<a class="btn btn-secondary loginBtn" href="/">홈으로</a>
-			</form>
-		</div>
+			
+			<br>
+			
+			<label>사진등록</label>
+			<img style="width: 300px; height: 300px;" id="picUpload">
+			<input type="file" name="pic_content" multiple="multiple" onchange="preview(this, $('#picUpload'));">
+			<br>
+			
+			<div>내용등록</div>
+			<textarea rows="10" cols="111" name="text_content" placeholder="내용을 입력해주세요"></textarea>
+			
+			<br>
+			
+			<input class="btn btn-info" type="submit" value="등록하기">
+			<a class="btn btn-dark" type="button" href="/">돌아가기</a>
+		
+		</form>
 		
 		
-		
-
-
+-----------------------------------------------------------------------------------<br>
+<br>
+-----------------------------------------------------------------------------------<br>
+	여행장소<br>
+	등록시간<br>
+	유저<br>
+	좋아요<br>
+	사진<br>
+	내용<br>
+	등록하기<br>
+	돌아가기<br>
+	
+	추후(지도서비스)
+	
+	
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
 	 	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
 	 	crossorigin="anonymous"></script>
@@ -100,5 +97,36 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" 
 		integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" 
 		crossorigin="anonymous"></script>
+		
+		
+		
+	 <script>
+	        
+	 function preview(input, target) {
+		    if(input.files && input.files[0]){
+		      var fileName= input.files[0].name;
+		      var ext=fileName.substr(fileName.length-3, fileName.length);
+		      var isCheck=false; 
+		          if(ext.toLowerCase()=='jpg' || ext.toLowerCase()=='gif' || ext.toLowerCase()=='png'){
+		          isCheck=true;               
+		      }
+		      if(isCheck==false){
+		          alert("이미지 파일 아님");
+		          jQuery(input).val("");
+		          return;
+		      }
+		      var reader = new FileReader();
+		      reader.readAsDataURL(input.files[0]);          
+		      reader.onload = function(e) {
+		        jQuery(target).attr('src', e.target.result);
+		      }
+		    }
+		}
+
+
+	 
+	</script>
+	
+		
 </body>
 </html>

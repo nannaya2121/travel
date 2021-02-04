@@ -16,3 +16,39 @@
 	margin: 1%;
 }
 
+.chunk{
+	border: 1px solid red; 
+	height: 35%; 
+	margin: 0; 
+	padding: 0;
+}
+
+.h2font{
+	margin-top: 1%; 
+	margin-left: 2%;
+}
+
+.divTotalBlock{
+	border: 1px solid orange; 
+	margin-top: 1%;
+}
+
+.picPlusID{
+	display: inline-block; 
+	border: 1px solid green; 
+	width: 19%; 
+	height: 75%;
+}
+
+.onlyPic{
+	border: 1px solid blue; 
+	height: 85%;
+}
+
+.onlyUser{
+	display: inline-block;
+}
+
+textarea{
+	resize: none;
+}
